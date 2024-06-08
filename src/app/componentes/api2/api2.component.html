@@ -1,4 +1,4 @@
-<div class="centrar">
+<!-- <div class="centrar">
     <label for=""> Selecciona una opcion de proteina </label>
     
     <select  name="" id="">
@@ -7,4 +7,40 @@
         <option value="1">Opcion3</option>
     </select>
 
+</div> -->
+
+<div class="container mt-4">
+    <div class="form-group">
+      <label for="categorySelect">Selecciona una categoría:</label>
+      <select id="categorySelect" class="form-control" (change)="onCategoryChange($event)">
+        <option value="" disabled selected>Seleccione una categoría</option>
+        @for (category of categories; track category) {
+            <option  [value]="category.strCategory">{{ category.strCategory }}</option>
+        }
+      </select>
+    </div>
+  @if (meals.length > 0) {
+
+      <div  class="mt-4">
+          <h3>Platillos en la categoría "{{ selectedCategory }}"</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                <th>Imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (meal of meals; track meals) {
+
+                <tr>
+                    <td>{{ meal.strMeal }}</td>
+                    <td><img [src]="meal.strMealThumb" alt="{{ meal.strMeal }}" class="img-thumbnail" style="width: 100px; height: auto;"></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>
+}
 </div>
+  
