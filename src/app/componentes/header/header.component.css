@@ -39,3 +39,11 @@ img{
   .shadow-button:hover {
     background-color: #e6be00; /* Color dorado más oscuro para hover */
   }
+
+  .inicio{
+    margin-left: 20px;
+  }
+
+  a{
+    text-decoration: none;
+  }
