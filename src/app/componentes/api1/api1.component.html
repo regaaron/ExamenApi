@@ -1,5 +1,22 @@
 <div class="centrar"> 
     <label for="text">Ingrese el nombre de un platillo</label>
 
-    <input type="text"  name="" id="">
+    <input type="text" id="mealName" name="mealName" [(ngModel)]="mealName" placeholder="Ingresa el nombre del platillo" id="">
+    <button class="button" (click)="searchMeal()" >Enviar</button>
+
+    @if(mealData != null){
+
+        <div class="mealData">
+            <h2> {{mealData.strMeal}}</h2>
+            <img [src]="mealData.strMealThumb" alt="{{ mealData.strMeal }}">
+            <p>{{ mealData.strInstructions }}</p>
+            <ul>
+                @for (ingredientes of getIngredients(); track ingredientes) {
+                    <li>{{ingredientes}}</li>
+                }
+            </ul>
+        </div>
+    } @else {
+        <p> No se ha encontrado el platillo </p>
+    }
 </div>
