@@ -28,6 +28,7 @@ img{
 .shadow-button {
     background-color: #e87d3e; /* Color dorado */
     color: #000; /* Texto negro */
+    width: 100px;
     border: none;
     padding: 10px 20px;
     font-size: 1.2rem;

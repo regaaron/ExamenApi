@@ -23,7 +23,7 @@
 
       <div  class="mt-4">
           <h3>Dishes from the "{{ selectedCategory }}" category</h3>
-        <table class="table">
+        <table class="table text-center table-hover ">
             <thead>
             <tr>
                 <th>Meal Id</th>
@@ -36,15 +36,15 @@
 
                 @if((i % 2 === 0)){
                     <tr>
-                        <td class="impar">{{meal.idMeal}}</td>
-                        <td class="impar">{{ meal.strMeal }}</td>
+                        <td class="impar align-middle">{{meal.idMeal}}</td>
+                        <td class="impar align-middle">{{ meal.strMeal }}</td>
                         <td class="impar"><img [src]="meal.strMealThumb" alt="{{ meal.strMeal }}" class="img-thumbnail" style="width: 100px; height: auto;"></td>
                     </tr>
                 }
                 @else {
                     <tr>
-                        <td class="impar">{{meal.idMeal}}</td>
-                        <td class="impar">{{ meal.strMeal }}</td>
+                        <td class="impar align-middle">{{meal.idMeal}}</td>
+                        <td class="impar align-middle">{{ meal.strMeal }}</td>
                         <td class="impar"><img [src]="meal.strMealThumb" alt="{{ meal.strMeal }}" class="img-thumbnail" style="width: 100px; height: auto;"></td>
                     </tr>
                 }

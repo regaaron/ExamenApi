@@ -16,6 +16,7 @@ input{
     height: 50px;
     width: 320px;
     border: 4px solid #e87d3e;
+    padding: 5px 10px;
 }
 
 input:focus{
@@ -91,4 +92,20 @@ input:focus{
     color: white;
     padding: 10px;
     text-align: center;
+}
+
+ul{
+    list-style: none;
+}
+
+.imagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 50px;
+}
+
+.imagen li{
+    text-align: start;
 }

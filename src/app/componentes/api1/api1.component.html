@@ -1,7 +1,7 @@
 <div class="centrar"> 
     <label for="text">Enter a dish name</label>
 
-    <input type="text" id="mealName" name="mealName" [(ngModel)]="mealName" placeholder="Dish name" id="">
+    <input (keyup.enter)="searchMeal()" type="text" id="mealName" name="mealName" [(ngModel)]="mealName" placeholder="Dish name" id="">
     <button class="button" (click)="searchMeal()" (keyup.enter)="searchMeal()">Search</button>
 
     @if(mealData != null){
@@ -13,16 +13,19 @@
             </div>
             <div class="card-body">
                 <h2>Ingredients</h2>
-                <ul>
-                    @for (ingredientes of getIngredients(); track ingredientes) {
-                        <li>{{ingredientes}}</li>
-                    }
-                </ul>
+                <div class="imagen">
+                    <img [src]="mealData.strMealThumb" alt="{{ mealData.strMeal }}">
+                    <ul>
+                        @for (ingredientes of getIngredients(); track ingredientes) {
+                            <li>{{ingredientes}}</li>
+                        }
+                    </ul>
+
+                </div>
                 <h2>Instructions:</h2>
                 <ol>
                     <p>{{ mealData.strInstructions }}</p>
                 </ol>
-                <img [src]="mealData.strMealThumb" alt="{{ mealData.strMeal }}">
                 <br><br>
                 <h2>If you are confused, heres a video for you</h2>
                 <br>
@@ -32,7 +35,8 @@
                 <p>Enjoy your meal :D</p>
             </div>
         </div>
-    } @else {
-        <p>The api doesn't include this dish</p>
-    }
+    } 
+    <!-- @else { -->
+        <!-- <p>The api doesn't include this dish</p>
+    } -->
 </div>
