@@ -1,22 +1,38 @@
 <div class="centrar"> 
-    <label for="text">Ingrese el nombre de un platillo</label>
+    <label for="text">Enter a dish name</label>
 
-    <input type="text" id="mealName" name="mealName" [(ngModel)]="mealName" placeholder="Ingresa el nombre del platillo" id="">
-    <button class="button" (click)="searchMeal()" >Enviar</button>
+    <input type="text" id="mealName" name="mealName" [(ngModel)]="mealName" placeholder="Dish name" id="">
+    <button class="button" (click)="searchMeal()" (keyup.enter)="searchMeal()">Search</button>
 
     @if(mealData != null){
-
-        <div class="mealData">
-            <h2> {{mealData.strMeal}}</h2>
-            <img [src]="mealData.strMealThumb" alt="{{ mealData.strMeal }}">
-            <p>{{ mealData.strInstructions }}</p>
-            <ul>
-                @for (ingredientes of getIngredients(); track ingredientes) {
-                    <li>{{ingredientes}}</li>
-                }
-            </ul>
+        <div class="card">
+            <div class="card-header">
+                <h2>{{mealData.strMeal}}</h2>
+                <p>{{mealData.strCategory}}</p>
+                <p>{{mealData.strArea}}</p>
+            </div>
+            <div class="card-body">
+                <h2>Ingredients</h2>
+                <ul>
+                    @for (ingredientes of getIngredients(); track ingredientes) {
+                        <li>{{ingredientes}}</li>
+                    }
+                </ul>
+                <h2>Instructions:</h2>
+                <ol>
+                    <p>{{ mealData.strInstructions }}</p>
+                </ol>
+                <img [src]="mealData.strMealThumb" alt="{{ mealData.strMeal }}">
+                <br><br>
+                <h2>If you are confused, heres a video for you</h2>
+                <br>
+                <iframe width="560" height="315" [src]="video | domseguro :'https://www.youtube.com/embed/'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="card-footer">
+                <p>Enjoy your meal :D</p>
+            </div>
         </div>
     } @else {
-        <p> No se ha encontrado el platillo </p>
+        <p>The api doesn't include this dish</p>
     }
 </div>

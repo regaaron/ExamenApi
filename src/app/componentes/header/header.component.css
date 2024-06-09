@@ -18,7 +18,7 @@ img{
 }
 
 .boton{
-    background-color: #D99543 ;
+    background-color: #e87d3e ;
     padding: 10px;
     border-radius: 10px;
     color: black
@@ -26,7 +26,7 @@ img{
 }
 
 .shadow-button {
-    background-color: #D99543; /* Color dorado */
+    background-color: #e87d3e; /* Color dorado */
     color: #000; /* Texto negro */
     border: none;
     padding: 10px 20px;

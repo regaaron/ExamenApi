@@ -84,7 +84,7 @@
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    border: 1px solid coral;
+    border: 1px solid #e87d3e;
     border-radius: 1rem;
   }
   
@@ -96,7 +96,7 @@
   }
   
   .flip-card-back {
-    background-color: #D99543;
+    background-color: #e87d3e;
     color: white;
     text-shadow: 2px 2px 5px black;
     transform: rotateY(180deg);

@@ -15,7 +15,7 @@ input{
     border-radius: 20px;
     height: 50px;
     width: 320px;
-    border: 4px solid #D99543;
+    border: 4px solid #e87d3e;
 }
 
 input:focus{
@@ -25,7 +25,7 @@ input:focus{
 
 
 .button {
-    background-color: #D99543; /* Color dorado */
+    background-color: #e87d3e; /* Color dorado */
     color: #000; /* Texto negro */
     border: none;
     padding: 10px 20px;
@@ -41,14 +41,54 @@ input:focus{
     background-color: #e6be00; /* Color dorado más oscuro para hover */
   }
 
-  .mealData{
+  /*.mealData{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  }
+  }*/
 
   img{
     height: 220px;
     width: 220px;
   }
+
+
+  /*card recipe*/
+  .card {
+    background-color: #2d2a2e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    margin: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.card-header {
+    background-color: #ff5722;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.card-body {
+    padding: 20px;
+    color: white;
+}
+
+.card-body h2 {
+    color: #ff5722;
+}
+
+.card-body ul, .card-body ol {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.card-footer {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}

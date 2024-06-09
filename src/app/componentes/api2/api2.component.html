@@ -11,9 +11,9 @@
 
 <div class="container mt-4">
     <div class="form-group">
-      <label for="categorySelect">Selecciona una categoría:</label>
+      <label for="categorySelect">Select a category:</label>
       <select id="categorySelect" class="form-control" (change)="onCategoryChange($event)">
-        <option value="" disabled selected>Seleccione una categoría</option>
+        <option value="" disabled selected>Select it here</option>
         @for (category of categories; track category) {
             <option  [value]="category.strCategory">{{ category.strCategory }}</option>
         }
@@ -22,25 +22,36 @@
   @if (meals.length > 0) {
 
       <div  class="mt-4">
-          <h3>Platillos en la categoría "{{ selectedCategory }}"</h3>
-        <table class="table table-striped">
+          <h3>Dishes from the "{{ selectedCategory }}" category</h3>
+        <table class="table">
             <thead>
-                <tr>
-                    <th>Nombre</th>
-                <th>Imagen</th>
+            <tr>
+                <th>Meal Id</th>
+                <th>Dish name</th>
+                <th>Dish  Image</th>
             </tr>
         </thead>
         <tbody>
-            @for (meal of meals; track meals) {
+            @for (meal of meals; track meals;let i=$index) {
 
-                <tr>
-                    <td>{{ meal.strMeal }}</td>
-                    <td><img [src]="meal.strMealThumb" alt="{{ meal.strMeal }}" class="img-thumbnail" style="width: 100px; height: auto;"></td>
-                </tr>
+                @if((i % 2 === 0)){
+                    <tr>
+                        <td class="impar">{{meal.idMeal}}</td>
+                        <td class="impar">{{ meal.strMeal }}</td>
+                        <td class="impar"><img [src]="meal.strMealThumb" alt="{{ meal.strMeal }}" class="img-thumbnail" style="width: 100px; height: auto;"></td>
+                    </tr>
+                }
+                @else {
+                    <tr>
+                        <td class="impar">{{meal.idMeal}}</td>
+                        <td class="impar">{{ meal.strMeal }}</td>
+                        <td class="impar"><img [src]="meal.strMealThumb" alt="{{ meal.strMeal }}" class="img-thumbnail" style="width: 100px; height: auto;"></td>
+                    </tr>
+                }
             }
         </tbody>
     </table>
     </div>
-}
+    }
 </div>
   

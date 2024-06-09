@@ -14,3 +14,19 @@ label{
 .container{
     color: white;
 }
+
+th{
+    background-color: #ff5722;
+    color: white;
+}
+
+
+.impar{
+    align-items: center;
+    background-color: #2d2a2e !important;
+    color: white;
+}
+.par{
+    background-color: gray !important;
+
+}

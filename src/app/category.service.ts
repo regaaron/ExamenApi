@@ -19,4 +19,4 @@ export class CategoryService {
   getMealsByCategory(category: string): Observable<any> {
     return this.http.get<any>(`${this.mealsByCategoryUrl}${category}`);
   }
-  }
+}
